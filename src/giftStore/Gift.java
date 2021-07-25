@@ -17,12 +17,12 @@ public class Gift {
         System.out.println("礼品编号: " + giftID + "---礼品信息: " + giftDescription + "---礼品剩余数量: " + giftNum + "---礼品价格: " + giftPrice);
     }
 
-    public synchronized void buyGift(){
+    public synchronized void buyGift() {
         giftNum--;
     }
 
-    public boolean hasGift(){
-        if(giftNum>0)
+    public boolean hasGift() {
+        if (giftNum > 0)
             return true;
         else
             return false;

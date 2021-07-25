@@ -24,14 +24,18 @@ public class Store {
         return gifts;
     }
 
-    public synchronized void keepAccounts(PurchaseRecord record){
+    public synchronized void keepAccounts(PurchaseRecord record) {
         accountBook.add(record);
     }
 
-    public void showAccountBook(){
-        for(PurchaseRecord record:accountBook){
+    public void showAccountBook() {
+        for (PurchaseRecord record : accountBook) {
             record.showPurchaseRecord();
         }
+    }
+
+    public List<PurchaseRecord> getAccountBook() {
+        return accountBook;
     }
 
     public void showGifts() {
@@ -39,5 +43,13 @@ public class Store {
         for (Gift gift : gifts) {
             gift.showGiftInfo();
         }
+    }
+
+    public int salesAmount() {
+        int num = 0;
+        for (int i = 0; i < gifts.length; i++) {
+            num += 20000 - gifts[i].getGiftNum();
+        }
+        return num;
     }
 }
